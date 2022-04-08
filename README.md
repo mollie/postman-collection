@@ -26,7 +26,7 @@ To retrieve the access tokens of another account using OAuth, use the endpoints 
 6. Paste the copied code in the `code` parameter in the payload of the ‘Generate access tokens’ request in the same collection folder, and send it. This should take no longer than 30 seconds. If the code expires, go back to step 4.
 7. The Postman tests read Mollie’s response and assign the tokens to global variables for further use. You can now send requests to all other endpoints in the collection and control the “submerchant” account.
 
-After one hour, you need to refresh the `access_token` using the ‘Refresh tokens’ endpoint. Send a request to the endpoint, and the variables holding the tokens will be overwritten with the new values.
+After one hour, you need to refresh the `access_token` using the ‘Refresh tokens’ endpoint. Send a request to the endpoint and the variables holding the tokens will be overwritten with the new values.
 
 ## Test mode
 Use the collections with an API key for test mode. **Mollie v2 API - OAuth-access_token authentication** uses the test mode query parameter (`GET`/`DELETE`) or payload-parameter (`PUT`/`PATCH`) by default.
