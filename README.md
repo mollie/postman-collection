@@ -32,4 +32,4 @@ After one hour, you need to refresh the `access_token` using the ‘Refresh toke
 Use the collections with an API key for test mode. **Mollie v2 API - OAuth-access_token authentication** uses the test mode query parameter (`GET`/`DELETE`) or payload-parameter (`PUT`/`PATCH`) by default.
 
 ## Feedback
-Mollie strives to align the collection with the [public API documentation](https://docs.mollie.com/). Your feedback or additional examples are welcome in comments, or submit them as a pull request.
+Submit your feedback or additional examples as comments or as a pull request.
