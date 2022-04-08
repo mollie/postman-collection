@@ -29,7 +29,7 @@ To retrieve the access tokens of another account using OAuth, use the endpoints 
 After one hour, you need to refresh the `access_token` using the ‘Refresh tokens’ endpoint. Send a request to the endpoint and the variables holding the tokens will be overwritten with the new values.
 
 ## Test mode
-Use the collections with an API key for test mode. **Mollie v2 API - OAuth-access_token authentication** uses the test mode query parameter (`GET`/`DELETE`) or payload-parameter (`PUT`/`PATCH`) by default.
+For test mode, use **Mollie v2 API - API Key authentication** with a test API key. **Mollie v2 API - OAuth-access_token authentication** uses the test mode query parameter (`GET`/`DELETE`) or payload-parameter (`PUT`/`PATCH`) by default.
 
 ## Feedback
 Submit your feedback or additional examples as comments or as a pull request.
