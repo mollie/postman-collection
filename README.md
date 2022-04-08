@@ -4,7 +4,7 @@ This repository contains a set of Postman v2.1 collections that you can use to t
 
 * The **Mollie v2 API - API Key authentication** collection is based on API key authentication, and includes all endpoints that are available through that type of credentials. This collection is most applicable for a situation where there’s a one-to-one relation between a customer or merchant and Mollie, for example when one ecommerce platform instance connects to one Mollie account.
 
-* The **Mollie v2 API - OAuth-access_token authentication** collection is based on `access_token` credentials, and includes the [Mollie Connect](https://docs.mollie.com/connect/overview) feature set to retrieve those access tokens. This collection is tailored for SaaS or marketplace setups and customers or merchants that want to operate on an account level, for example using Mollie's [Onboarding API](https://docs.mollie.com/reference/v2/onboarding-api/overview), Administration API, etc.
+* The **Mollie v2 API - OAuth-access_token authentication** collection is based on `access_token` credentials, and includes the [Mollie Connect](https://docs.mollie.com/connect/overview) feature set to retrieve those access tokens. This collection is tailored for SaaS or marketplace setups and customers or merchants who want to operate on an account level, for example using Mollie's [Onboarding API](https://docs.mollie.com/reference/v2/onboarding-api/overview), Administration API, etc.
 
 ## Structure
 The structure of the collections follows the structure of Mollie’s public API documentation. There is a request to each endpoint, and each request contains at least one example. The example set aims for showcasing the variety of options an endpoint offers, rather than showing every possibility.
