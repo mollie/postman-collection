@@ -7,7 +7,7 @@ This repository contains a set of Postman v2.1 collections that you can use to t
 * The **Mollie v2 API - OAuth-access_token authentication** collection is based on `access_token` credentials, and includes the [Mollie Connect](https://docs.mollie.com/connect/overview) feature set to retrieve those access tokens. This collection is tailored for SaaS or marketplace setups and customers or merchants who want to operate on an account level, for example using Mollie's [Onboarding API](https://docs.mollie.com/reference/v2/onboarding-api/overview), Administration API, etc.
 
 ## Structure
-The structure of the collections follows the structure of Mollie’s public API documentation. A request is sent to each endpoint, and each request contains at least one example. The example set aims for showcasing the variety of options an endpoint offers, rather than showing every possibility.
+The structure of the collections follows the structure of Mollie’s public API documentation. A request is sent to each endpoint, and each request contains at least one example. The example set aims to showcase the variety of options an endpoint offers, rather than showing every possibility.
 
 ## Collection variables
 Most endpoint payloads contain variables instead of static values. All variables are initiated at the collection level, and contain dummy data that you can easily adjust. The saved examples display the actual values.
