@@ -1,6 +1,6 @@
 # Overview
 
-This repository contains a set of Postman v2.1 collections to try out the functionality of the Mollie API. You can import the JSON files into any local Postman instance. The following collections are available:
+This repository contains a set of Postman v2.1 collections that you can use to try out the functionality of the Mollie API. You can import the JSON files into any local Postman instance. The following collections are available:
 
 * The **Mollie v2 API - API Key authentication** collection is based on API key authentication, and includes all endpoints that are available through that type of credentials. This collection is most applicable for a situation where there’s a one-to-one relation between a customer or merchant and Mollie, for example when one ecommerce platform instance connects to one Mollie account.
 
