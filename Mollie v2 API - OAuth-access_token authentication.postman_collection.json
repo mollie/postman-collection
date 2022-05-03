@@ -1,6 +1,6 @@
 {
 	"info": {
-		"_postman_id": "52a856a6-f648-45ba-b04c-cc23bea29fec",
+		"_postman_id": "aa54290d-706c-4f60-96ff-29605d99e0d6",
 		"name": "Mollie v2 API - OAuth/access_token authentication",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
 	},
@@ -725,8 +725,8 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": null,
-									"header": null,
+									"_postman_previewlanguage": "Text",
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"_embedded\": {\n        \"payments\": [\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_92M7kM99Rg\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-29T13:39:35+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"This is the description\",\n                \"method\": \"creditcard\",\n                \"metadata\": null,\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-29T13:57:02+00:00\",\n                \"locale\": \"nl_NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://example.com/redirect\",\n                \"webhookUrl\": \"https://example.com/webhook\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_92M7kM99Rg\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_92M7kM99Rg\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_TNFzqz7jzb\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-29T13:38:26+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"This is the description\",\n                \"method\": \"creditcard\",\n                \"metadata\": null,\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-29T13:56:02+00:00\",\n                \"locale\": \"nl_NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://example.com/redirect\",\n                \"webhookUrl\": \"https://example.com/webhook\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_TNFzqz7jzb\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_TNFzqz7jzb\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_h7uqbSUNbG\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-29T13:07:29+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"Description\",\n                \"method\": null,\n                \"metadata\": null,\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-29T13:24:02+00:00\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://example.com\",\n                \"webhookUrl\": \"https://example.com/webhook\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_h7uqbSUNbG\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_h7uqbSUNbG\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_FE9UrEs9zU\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-29T13:01:35+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"Updated payment description\",\n                \"method\": \"ideal\",\n                \"metadata\": {\n                    \"someProperty\": \"someValue\",\n                    \"anotherProperty\": \"anotherValue\"\n                },\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-29T13:25:03+00:00\",\n                \"locale\": \"en_GB\",\n                \"restrictPaymentMethodsToCountry\": \"NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://example.com\",\n                \"webhookUrl\": \"https://example.com/webhook\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_FE9UrEs9zU\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_FE9UrEs9zU\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_dFWesfS4F7\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-23T08:25:22+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"Description\",\n                \"method\": \"ideal\",\n                \"metadata\": {\n                    \"someProperty\": \"someValue\",\n                    \"anotherProperty\": \"anotherValue\"\n                },\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-23T08:42:02+00:00\",\n                \"locale\": \"en_GB\",\n                \"restrictPaymentMethodsToCountry\": \"NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://example.com\",\n                \"webhookUrl\": \"https://example.com/webhook\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_dFWesfS4F7\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_dFWesfS4F7\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_8N2vfqD9Q9\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-22T08:48:38+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"My first routed payment\",\n                \"method\": \"creditcard\",\n                \"metadata\": null,\n                \"status\": \"expired\",\n                \"expiredAt\": \"2021-12-22T09:06:02+00:00\",\n                \"locale\": \"en_NL\",\n                \"countryCode\": \"NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://www.mollie.com/en\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_8N2vfqD9Q9\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_8N2vfqD9Q9\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_nBs82Ujy7g\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-10T12:37:35+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"Payment for invoice number #000121\",\n                \"method\": \"ideal\",\n                \"metadata\": {\n                    \"order_id\": \"4590962\"\n                },\n                \"status\": \"paid\",\n                \"paidAt\": \"2021-12-10T12:39:18+00:00\",\n                \"amountRefunded\": {\n                    \"value\": \"0.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"amountRemaining\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"locale\": \"en_NL\",\n                \"countryCode\": \"NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://paymentlink.mollie.com/pay/status/5c19166baf815965d295a054c1851a4ec55f87f1/\",\n                \"webhookUrl\": \"https://paymentlink.mollie.com/pay/webhook\",\n                \"settlementAmount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"details\": {\n                    \"consumerName\": \"T. TEST\",\n                    \"consumerAccount\": \"NL68RABO0638606673\",\n                    \"consumerBic\": \"RABONL2U\"\n                },\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_nBs82Ujy7g\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_nBs82Ujy7g\",\n                        \"type\": \"text/html\"\n                    },\n                    \"changePaymentState\": {\n                        \"href\": \"https://www.mollie.com/checkout/test-mode?method=ideal&token=3.st50hq\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"payment\",\n                \"id\": \"tr_6qh37hS3FF\",\n                \"mode\": \"test\",\n                \"createdAt\": \"2021-12-08T16:02:20+00:00\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"description\": \"My first payment\",\n                \"method\": \"ideal\",\n                \"metadata\": null,\n                \"status\": \"paid\",\n                \"paidAt\": \"2021-12-08T16:04:10+00:00\",\n                \"amountRefunded\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"amountRemaining\": {\n                    \"value\": \"0.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"locale\": \"en_NL\",\n                \"countryCode\": \"NL\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"sequenceType\": \"oneoff\",\n                \"redirectUrl\": \"https://www.mollie.com/en\",\n                \"settlementAmount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"details\": {\n                    \"consumerName\": \"T. TEST\",\n                    \"consumerAccount\": \"NL55RABO0282361409\",\n                    \"consumerBic\": \"RABONL2U\"\n                },\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_6qh37hS3FF\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"dashboard\": {\n                        \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_6qh37hS3FF\",\n                        \"type\": \"text/html\"\n                    },\n                    \"changePaymentState\": {\n                        \"href\": \"https://www.mollie.com/checkout/test-mode?method=ideal&token=3.ee5j0m\",\n                        \"type\": \"text/html\"\n                    },\n                    \"refunds\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_6qh37hS3FF/refunds\",\n                        \"type\": \"application/hal+json\"\n                    }\n                }\n            }\n        ]\n    },\n    \"count\": 8,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/list-payments\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
 								},
@@ -1796,7 +1796,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -2839,8 +2839,8 @@
 											]
 										}
 									},
-									"_postman_previewlanguage": null,
-									"header": null,
+									"_postman_previewlanguage": "Text",
+									"header": [],
 									"cookie": [],
 									"body": "{\n    \"_embedded\": {\n        \"payment_links\": [\n            {\n                \"resource\": \"payment-link\",\n                \"id\": \"pl_Df8NQJGmfOz1KgPwIpI4P\",\n                \"description\": \"Payment for invoice number #000121\",\n                \"mode\": \"test\",\n                \"profileId\": \"pfl_85dxyKqNHa\",\n                \"amount\": {\n                    \"value\": \"10.00\",\n                    \"currency\": \"EUR\"\n                },\n                \"webhookUrl\": \"https://www.mollie.com/en/backend_updates\",\n                \"redirectUrl\": \"https://www.mollie.com/en/consumer_landing\",\n                \"createdAt\": \"2021-12-10T12:37:16+00:00\",\n                \"paidAt\": \"2021-12-10T12:39:18+00:00\",\n                \"updatedAt\": \"2021-12-10T12:39:18+00:00\",\n                \"expiresAt\": \"2021-12-24T11:00:16+00:00\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payment-links/pl_Df8NQJGmfOz1KgPwIpI4P\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"paymentLink\": {\n                        \"href\": \"https://paymentlink.mollie.com/payment/Df8NQJGmfOz1KgPwIpI4P/\",\n                        \"type\": \"text/html\"\n                    }\n                }\n            }\n        ]\n    },\n    \"count\": 1,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payment-links-api/list-payment-links\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payment-links?from=pl_Df8NQJGmfOz1KgPwIpI4P&limit=2\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": {\n            \"href\": \"https://api.mollie.com/v2/payment-links?from=pl_fGflQm6mifdUiDUwRDqzT&limit=2\",\n            \"type\": \"application/hal+json\"\n        },\n        \"next\": null\n    }\n}"
 								},
@@ -3283,7 +3283,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -3667,7 +3667,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -4485,7 +4485,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -5109,7 +5109,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -5219,7 +5219,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"{{currency}}\",\n        \"value\":\"{{value}}\"\n    },\n    \"times\":\"{{subscription.times}}\",\n    \"interval\":\"{{subscription.interval}}\",\n    \"startDate\":\"{{currentDate}}\",\n    \"description\":\"{{subscription.description}}\",\n    \"mandateId\":\"{{mandateId}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    },\n    \"testmode\":true\n}",
+									"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"{{currency}}\",\n        \"value\":\"{{value}}\"\n    },\n    \"times\":\"{{subscription.times}}\",\n    \"interval\":\"{{subscription.interval}}\",\n    \"startDate\":\"{{currentDate}}\",\n    \"description\":\"{{subscription.description}}\",\n    \"mandateId\":\"{{mandateId}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"profileId\":\"{{profileId}}\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    },\n    \"testmode\":true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -5227,7 +5227,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/customers/*customerId*/subscriptions?testmode=true",
+									"raw": "{{apiUrl}}/customers/*customerId*/subscriptions",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -5235,12 +5235,6 @@
 										"customers",
 										"*customerId*",
 										"subscriptions"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -5769,12 +5763,12 @@
 									"query": [
 										{
 											"key": "profileId",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
 											"key": "testmode",
-											"value": null,
+											"value": "",
 											"disabled": true
 										},
 										{
@@ -7299,7 +7293,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -7441,7 +7435,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						},
@@ -7601,7 +7595,7 @@
 										}
 									],
 									"cookie": [],
-									"body": null
+									"body": ""
 								}
 							]
 						}
