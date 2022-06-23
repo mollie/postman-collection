@@ -532,7 +532,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "",
+									"raw": "{\n    \"testmode\":true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -540,19 +540,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/tr_FE9UrEs9zU?testmode=true",
+									"raw": "{{apiUrl}}/payments/*id*",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"tr_FE9UrEs9zU"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
+										"*id*"
 									]
 								}
 							},
@@ -1730,8 +1724,17 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds/*id*?testmode=true",
+									"raw": "{{apiUrl}}/payments/*paymentId*/refunds/*id*",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -1740,12 +1743,6 @@
 										"*paymentId*",
 										"refunds",
 										"*id*"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -1754,9 +1751,25 @@
 									"name": "Cancel refund of payment",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{apiUrl}}/payments/tr_nBs82Ujy7g/refunds/re_DAsyCbwn97?testmode=true",
+											"raw": "{{apiUrl}}/payments/tr_nBs82Ujy7g/refunds/re_DAsyCbwn97",
 											"host": [
 												"{{apiUrl}}"
 											],
@@ -1765,12 +1778,6 @@
 												"tr_nBs82Ujy7g",
 												"refunds",
 												"re_DAsyCbwn97"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -3221,20 +3228,23 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{apiUrl}}/orders/*id*?testmode=true",
+									"raw": "{{apiUrl}}/orders/*id*",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"orders",
 										"*id*"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -3243,21 +3253,31 @@
 									"name": "Cancel order",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{apiUrl}}/orders/ord_efu0tw?testmode=true",
+											"raw": "{{apiUrl}}/orders/ord_efu0tw",
 											"host": [
 												"{{apiUrl}}"
 											],
 											"path": [
 												"orders",
 												"ord_efu0tw"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -3587,7 +3607,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n         \"lines\": [\n            {\n               \"id\": \"{{orderLineId}}\",\n               \"quantity\": {{quantity}}\n            },\n            {\n               \"id\": \"{{orderLineId}}\"\n            }\n         ]\n   }",
+									"raw": "{\n         \"lines\": [\n            {\n               \"id\": \"{{orderLineId}}\",\n               \"quantity\": {{quantity}}\n            },\n            {\n               \"id\": \"{{orderLineId}}\"\n            }\n         ],\n    \"testmode\":true\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -3595,7 +3615,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/orders/*orderId*/lines?testmode=true",
+									"raw": "{{apiUrl}}/orders/*orderId*/lines",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -3603,12 +3623,6 @@
 										"orders",
 										"*orderId*",
 										"lines"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -3620,7 +3634,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n         \"lines\": [\n            {\n               \"id\": \"odl_1.np0x4y\",\n               \"quantity\": 2\n            }\n         ]\n   }",
+											"raw": "{\n         \"lines\": [\n            {\n               \"id\": \"odl_1.np0x4y\",\n               \"quantity\": 2\n            }\n         ],\n    \"testmode\":true\n\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -3628,7 +3642,7 @@
 											}
 										},
 										"url": {
-											"raw": "{{apiUrl}}/orders/ord_34etia/lines?testmode=true",
+											"raw": "{{apiUrl}}/orders/ord_34etia/lines",
 											"host": [
 												"{{apiUrl}}"
 											],
@@ -3636,12 +3650,6 @@
 												"orders",
 												"ord_34etia",
 												"lines"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -4423,20 +4431,23 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{apiUrl}}/customers/*customerId*?testmode=true",
+									"raw": "{{apiUrl}}/customers/*customerId*",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"customers",
 										"*customerId*"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -4445,21 +4456,31 @@
 									"name": "Delete customer",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{apiUrl}}/customers/cst_dTDjjbdSqm?testmode=true",
+											"raw": "{{apiUrl}}/customers/cst_dTDjjbdSqm",
 											"host": [
 												"{{apiUrl}}"
 											],
 											"path": [
 												"customers",
 												"cst_dTDjjbdSqm"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -5043,8 +5064,17 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{apiUrl}}/customers/*customerId*/mandates/*mandateId*?testmode=true",
+									"raw": "{{apiUrl}}/customers/*customerId*/mandates/*mandateId*",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -5053,12 +5083,6 @@
 										"*customerId*",
 										"mandates",
 										"*mandateId*"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -5067,9 +5091,25 @@
 									"name": "Revoke mandate",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{apiUrl}}/customers/cst_tKt44u85MM/mandates/mdt_ajQ5mFz2r8?testmode=true",
+											"raw": "{{apiUrl}}/customers/cst_tKt44u85MM/mandates/mdt_ajQ5mFz2r8",
 											"host": [
 												"{{apiUrl}}"
 											],
@@ -5078,12 +5118,6 @@
 												"cst_tKt44u85MM",
 												"mandates",
 												"mdt_ajQ5mFz2r8"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -5565,8 +5599,17 @@
 							"request": {
 								"method": "DELETE",
 								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
 								"url": {
-									"raw": "{{apiUrl}}/customers/*customerId*/subscriptions/*id*?testmode=true",
+									"raw": "{{apiUrl}}/customers/*customerId*/subscriptions/*id*",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -5575,12 +5618,6 @@
 										"*customerId*",
 										"subscriptions",
 										"*id*"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
@@ -5589,9 +5626,25 @@
 									"name": "Cancel subscription",
 									"originalRequest": {
 										"method": "DELETE",
-										"header": [],
+										"header": [
+											{
+												"key": "Content-Type",
+												"name": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
 										"url": {
-											"raw": "{{apiUrl}}/customers/cst_tKt44u85MM/subscriptions/sub_GsQJVSHHvQ?testmode=true",
+											"raw": "{{apiUrl}}/customers/cst_tKt44u85MM/subscriptions/sub_GsQJVSHHvQ",
 											"host": [
 												"{{apiUrl}}"
 											],
@@ -5600,12 +5653,6 @@
 												"cst_tKt44u85MM",
 												"subscriptions",
 												"sub_GsQJVSHHvQ"
-											],
-											"query": [
-												{
-													"key": "testmode",
-													"value": "true"
-												}
 											]
 										}
 									},
@@ -6002,7 +6049,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "https://www.mollie.com/oauth2/authorize?client_id={{clientId}}&redirect_uri=https://example.com/mollie/connect_redirect.php&state={{$guid}}&scope=payments.read payments.write profiles.read profiles.write organizations.read onboarding.read onboarding.write payment-links.read payment-links.write orders.read orders.write subscriptions.read subscriptions.write customers.read customers.write mandates.read mandates.write shipments.read shipments.write settlements.read invoices.read refunds.read refunds.write&response_type=code&approval_prompt=auto&approval_prompt=force",
+									"raw": "https://www.mollie.com/oauth2/authorize?client_id={{clientId}}&redirect_uri=https://example.com/mollie/connect_redirect.php&state={{$guid}}&scope=payments.read payments.write profiles.read profiles.write organizations.read onboarding.read onboarding.write payment-links.read payment-links.write orders.read orders.write subscriptions.read subscriptions.write customers.read customers.write mandates.read mandates.write shipments.read shipments.write settlements.read invoices.read refunds.read refunds.write balances.read&response_type=code&approval_prompt=auto&approval_prompt=force",
 									"protocol": "https",
 									"host": [
 										"www",
@@ -6028,7 +6075,7 @@
 										},
 										{
 											"key": "scope",
-											"value": "payments.read payments.write profiles.read profiles.write organizations.read onboarding.read onboarding.write payment-links.read payment-links.write orders.read orders.write subscriptions.read subscriptions.write customers.read customers.write mandates.read mandates.write shipments.read shipments.write settlements.read invoices.read refunds.read refunds.write"
+											"value": "payments.read payments.write profiles.read profiles.write organizations.read onboarding.read onboarding.write payment-links.read payment-links.write orders.read orders.write subscriptions.read subscriptions.write customers.read customers.write mandates.read mandates.write shipments.read shipments.write settlements.read invoices.read refunds.read refunds.write balances.read"
 										},
 										{
 											"key": "response_type",
@@ -7721,73 +7768,6 @@
 					"item": [
 						{
 							"name": "Get settlement",
-							"request": {
-								"method": "GET",
-								"header": [],
-								"url": {
-									"raw": "{{apiUrl}}/settlements/*id*",
-									"host": [
-										"{{apiUrl}}"
-									],
-									"path": [
-										"settlements",
-										"*id*"
-									]
-								}
-							},
-							"response": [
-								{
-									"name": "Get settlement",
-									"originalRequest": {
-										"method": "GET",
-										"header": [],
-										"url": {
-											"raw": "{{apiUrl}}/settlements/stl_i214s0",
-											"host": [
-												"{{apiUrl}}"
-											],
-											"path": [
-												"settlements",
-												"stl_i214s0"
-											]
-										}
-									},
-									"status": "OK",
-									"code": 200,
-									"_postman_previewlanguage": "json",
-									"header": [
-										{
-											"key": "Server",
-											"value": "nginx"
-										},
-										{
-											"key": "Date",
-											"value": "Wed, 19 Jan 2022 15:40:31 GMT"
-										},
-										{
-											"key": "Content-Type",
-											"value": "application/hal+json"
-										},
-										{
-											"key": "Content-Length",
-											"value": "2420"
-										},
-										{
-											"key": "X-Robots-Tag",
-											"value": "noindex"
-										},
-										{
-											"key": "Strict-Transport-Security",
-											"value": "max-age=31536000; includeSubDomains; preload"
-										}
-									],
-									"cookie": [],
-									"body": "{\n    \"resource\": \"settlement\",\n    \"id\": \"stl_i214s0\",\n    \"reference\": \"07049691.2107.01\",\n    \"createdAt\": \"2021-07-13T04:08:19+00:00\",\n    \"settledAt\": \"2021-07-13T07:15:33+00:00\",\n    \"status\": \"paidout\",\n    \"amount\": {\n        \"value\": \"6.02\",\n        \"currency\": \"EUR\"\n    },\n    \"invoiceId\": \"inv_wqN9zppN9h\",\n    \"periods\": {\n        \"2021\": {\n            \"05\": {\n                \"invoiceId\": \"inv_wqN9zppN9h\",\n                \"costs\": [\n                    {\n                        \"description\": \"Invoice Compensation\",\n                        \"method\": null,\n                        \"count\": 1,\n                        \"rate\": {\n                            \"fixed\": {\n                                \"value\": \"0.0000\",\n                                \"currency\": \"EUR\"\n                            },\n                            \"percentage\": \"0\"\n                        },\n                        \"amountNet\": {\n                            \"value\": \"-0.0300\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountVat\": null,\n                        \"amountGross\": {\n                            \"value\": \"-0.0300\",\n                            \"currency\": \"EUR\"\n                        }\n                    }\n                ],\n                \"invoiceReference\": \"MOLR2021.0000478657\"\n            },\n            \"07\": {\n                \"invoiceId\": \"inv_7ee8zakWxE\",\n                \"costs\": [\n                    {\n                        \"description\": \"iDEAL\",\n                        \"method\": \"ideal\",\n                        \"count\": 2,\n                        \"rate\": {\n                            \"fixed\": {\n                                \"value\": \"0.2800\",\n                                \"currency\": \"EUR\"\n                            },\n                            \"percentage\": \"0\"\n                        },\n                        \"amountNet\": {\n                            \"value\": \"0.5600\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountVat\": {\n                            \"value\": \"0.1176\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountGross\": {\n                            \"value\": \"0.6776\",\n                            \"currency\": \"EUR\"\n                        }\n                    },\n                    {\n                        \"description\": \"Refunds\",\n                        \"method\": \"refund\",\n                        \"count\": 1,\n                        \"rate\": {\n                            \"fixed\": {\n                                \"value\": \"0.2500\",\n                                \"currency\": \"EUR\"\n                            },\n                            \"percentage\": \"0\"\n                        },\n                        \"amountNet\": {\n                            \"value\": \"0.2500\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountVat\": {\n                            \"value\": \"0.0525\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountGross\": {\n                            \"value\": \"0.3025\",\n                            \"currency\": \"EUR\"\n                        }\n                    },\n                    {\n                        \"description\": \"Rounding differences\",\n                        \"method\": null,\n                        \"count\": 3,\n                        \"rate\": {\n                            \"fixed\": {\n                                \"value\": \"0.0000\",\n                                \"currency\": \"EUR\"\n                            },\n                            \"percentage\": \"0\"\n                        },\n                        \"amountNet\": {\n                            \"value\": \"0.0099\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountVat\": null,\n                        \"amountGross\": {\n                            \"value\": \"0.0099\",\n                            \"currency\": \"EUR\"\n                        }\n                    }\n                ],\n                \"revenue\": [\n                    {\n                        \"description\": \"iDEAL\",\n                        \"method\": \"ideal\",\n                        \"count\": 2,\n                        \"amountNet\": {\n                            \"value\": \"6.9800\",\n                            \"currency\": \"EUR\"\n                        },\n                        \"amountVat\": null,\n                        \"amountGross\": {\n                            \"value\": \"6.9800\",\n                            \"currency\": \"EUR\"\n                        }\n                    }\n                ],\n                \"invoiceReference\": \"MOLR2021.0000791294\"\n            }\n        }\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/settlements/stl_i214s0\",\n            \"type\": \"application/hal+json\"\n        },\n        \"payments\": {\n            \"href\": \"https://api.mollie.com/v2/settlements/stl_i214s0/payments\",\n            \"type\": \"application/hal+json\"\n        },\n        \"refunds\": {\n            \"href\": \"https://api.mollie.com/v2/settlements/stl_i214s0/refunds\",\n            \"type\": \"application/hal+json\"\n        },\n        \"chargebacks\": {\n            \"href\": \"https://api.mollie.com/v2/settlements/stl_i214s0/chargebacks\",\n            \"type\": \"application/hal+json\"\n        },\n        \"captures\": {\n            \"href\": \"https://api.mollie.com/v2/settlements/stl_i214s0/captures\",\n            \"type\": \"application/hal+json\"\n        },\n        \"invoice\": {\n            \"href\": \"https://api.mollie.com/v2/invoices/inv_wqN9zppN9h\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/settlements-api/get-settlement\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
-								}
-							]
-						},
-						{
-							"name": "Get settlement Copy",
 							"request": {
 								"method": "GET",
 								"header": [],
