@@ -1863,13 +1863,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{apiUrl}}/payments/tr_nBs82Ujy7g/refunds",
+											"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
 											"host": [
 												"{{apiUrl}}"
 											],
 											"path": [
 												"payments",
-												"tr_nBs82Ujy7g",
+												"*paymentId*",
 												"refunds"
 											]
 										}
@@ -2001,13 +2001,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
+									"raw": "{{apiUrl}}/orders/*orderId*/refunds",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
-										"payments",
-										"*paymentId*",
+										"orders",
+										"*orderId*",
 										"refunds"
 									]
 								}
