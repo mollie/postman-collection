@@ -3,7 +3,8 @@
 		"_postman_id": "41e8a752-cefd-4ff3-aeee-5a60a18a9543",
 		"name": "Mollie v2 API - APIKey authentication",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18789175"
+		"_exporter_id": "18789175",
+		"_collection_link": "https://testmollietech.postman.co/workspace/Mollie-API-postman-project~919efc9c-e984-40e1-8a0d-ed22b9402db7/collection/18789175-41e8a752-cefd-4ff3-aeee-5a60a18a9543?action=share&creator=18789175&source=collection_link"
 	},
 	"item": [
 		{
@@ -1863,13 +1864,13 @@
 										"method": "GET",
 										"header": [],
 										"url": {
-											"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
+											"raw": "{{apiUrl}}/payments/tr_nBs82Ujy7g/refunds",
 											"host": [
 												"{{apiUrl}}"
 											],
 											"path": [
 												"payments",
-												"*paymentId*",
+												"tr_nBs82Ujy7g",
 												"refunds"
 											]
 										}
@@ -2001,13 +2002,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/orders/*orderId*/refunds",
+									"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
-										"orders",
-										"*orderId*",
+										"payments",
+										"*paymentId*",
 										"refunds"
 									]
 								}
@@ -2970,6 +2971,74 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"resource\": \"order\",\n    \"id\": \"ord_3bhb7a\",\n    \"profileId\": \"pfl_85dxyKqNHa\",\n    \"method\": \"ideal\",\n    \"amount\": {\n        \"value\": \"289.00\",\n        \"currency\": \"EUR\"\n    },\n    \"status\": \"created\",\n    \"isCancelable\": false,\n    \"metadata\": {\n        \"someProperty\": \"someValue\",\n        \"anotherProperty\": \"anotherValue\"\n    },\n    \"createdAt\": \"2022-01-04T12:40:12+00:00\",\n    \"expiresAt\": \"2022-02-01T12:40:12+00:00\",\n    \"mode\": \"test\",\n    \"locale\": \"en_US\",\n    \"billingAddress\": {\n        \"organizationName\": \"Mollie B.V.\",\n        \"streetAndNumber\": \"Keizersgracht 126\",\n        \"postalCode\": \"1234AB\",\n        \"city\": \"Amsterdam\",\n        \"region\": \"Noord-Holland\",\n        \"country\": \"NL\",\n        \"title\": \"Dhr.\",\n        \"givenName\": \"Piet\",\n        \"familyName\": \"Mondriaan\",\n        \"email\": \"piet@mondriaan.com\",\n        \"phone\": \"+3130920207\"\n    },\n    \"shopperCountryMustMatchBillingCountry\": false,\n    \"consumerDateOfBirth\": \"1958-01-31\",\n    \"orderNumber\": \"1337\",\n    \"shippingAddress\": {\n        \"organizationName\": \"Mollie B.V.\",\n        \"streetAndNumber\": \"Keizersgracht 126\",\n        \"streetAdditional\": \"4th floor\",\n        \"postalCode\": \"5678AB\",\n        \"city\": \"Haarlem\",\n        \"region\": \"Noord-Holland\",\n        \"country\": \"NL\",\n        \"title\": \"Mr.\",\n        \"givenName\": \"Chuck\",\n        \"familyName\": \"Norris\",\n        \"email\": \"norris@chucknorrisfacts.net\"\n    },\n    \"redirectUrl\": \"https://example.com/landing_page\",\n    \"webhookUrl\": \"https://example.com/redirect\",\n    \"lines\": [\n        {\n            \"resource\": \"orderline\",\n            \"id\": \"odl_1.jye72q\",\n            \"orderId\": \"ord_3bhb7a\",\n            \"name\": \"order line number 1\",\n            \"sku\": null,\n            \"type\": \"physical\",\n            \"status\": \"created\",\n            \"metadata\": null,\n            \"isCancelable\": false,\n            \"quantity\": 2,\n            \"quantityShipped\": 0,\n            \"amountShipped\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityRefunded\": 0,\n            \"amountRefunded\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityCanceled\": 0,\n            \"amountCanceled\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"shippableQuantity\": 0,\n            \"refundableQuantity\": 0,\n            \"cancelableQuantity\": 0,\n            \"unitPrice\": {\n                \"value\": \"89.00\",\n                \"currency\": \"EUR\"\n            },\n            \"vatRate\": \"21.00\",\n            \"vatAmount\": {\n                \"value\": \"29.16\",\n                \"currency\": \"EUR\"\n            },\n            \"totalAmount\": {\n                \"value\": \"168.00\",\n                \"currency\": \"EUR\"\n            },\n            \"createdAt\": \"2022-01-04T12:40:12+00:00\",\n            \"discountAmount\": {\n                \"value\": \"10.00\",\n                \"currency\": \"EUR\"\n            }\n        },\n        {\n            \"resource\": \"orderline\",\n            \"id\": \"odl_1.q1noas\",\n            \"orderId\": \"ord_3bhb7a\",\n            \"name\": \"order line number 2\",\n            \"sku\": null,\n            \"type\": \"physical\",\n            \"status\": \"created\",\n            \"metadata\": null,\n            \"isCancelable\": false,\n            \"quantity\": 1,\n            \"quantityShipped\": 0,\n            \"amountShipped\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityRefunded\": 0,\n            \"amountRefunded\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityCanceled\": 0,\n            \"amountCanceled\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"shippableQuantity\": 0,\n            \"refundableQuantity\": 0,\n            \"cancelableQuantity\": 0,\n            \"unitPrice\": {\n                \"value\": \"121.00\",\n                \"currency\": \"EUR\"\n            },\n            \"vatRate\": \"21.00\",\n            \"vatAmount\": {\n                \"value\": \"21.00\",\n                \"currency\": \"EUR\"\n            },\n            \"totalAmount\": {\n                \"value\": \"121.00\",\n                \"currency\": \"EUR\"\n            },\n            \"createdAt\": \"2022-01-04T12:40:12+00:00\"\n        }\n    ],\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/orders/ord_3bhb7a\",\n            \"type\": \"application/hal+json\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://www.mollie.com/dashboard/org_13514547/orders/ord_3bhb7a\",\n            \"type\": \"text/html\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/order/3bhb7a\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/orders-api/create-order\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Create Billie order",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"amount\": {\n        \"value\": \"9.00\",\n        \"currency\": \"EUR\"\n    },\n   \"billingAddress\":{\n        \"organizationName\":\"Mollie B.V.\",\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"postalCode\":\"1234AB\",\n        \"country\":\"DE\",\n        \"title\":\"Dhr.\",\n        \"givenName\":\"Piet\",\n        \"familyName\":\"Mondriaan\",\n        \"email\":\"piet@mondriaan.com\",\n        \"phone\":\"+3130920207\"\n   },\n    \"locale\": \"de_DE\",\n    \"method\": \"billie\",\n    \"orderNumber\": \"1337\",\n    \"redirectUrl\": \"https://example.com/landing_page\",\n    \"webhookUrl\": \"https://example.com/redirect\",\n    \"lines\": [\n        {\n            \"name\": \"line 1\",\n            \"type\": \"physical\",\n            \"unitPrice\": {\n                \"currency\": \"EUR\",\n                \"value\": \"5.00\"\n            },\n            \"vatRate\": \"10\",\n            \"quantity\": \"1\",\n            \"totalAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"5.00\"\n            },\n            \"vatAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"0.45\"\n            }\n        },\n        {\n            \"name\": \"line 2\",\n            \"type\": \"physical\",\n            \"unitPrice\": {\n                \"currency\": \"EUR\",\n                \"value\": \"5.00\"\n            },\n            \"vatRate\": \"10\",\n            \"quantity\": \"1\",\n            \"totalAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"5.00\"\n            },\n            \"vatAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"0.45\"\n            }\n        },\n        {\n            \"name\": \"discount 10%\",\n            \"type\": \"discount\",\n            \"unitPrice\": {\n                \"currency\": \"EUR\",\n                \"value\": \"-1.00\"\n            },\n            \"vatRate\": \"10\",\n            \"quantity\": \"1\",\n            \"totalAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"-1.00\"\n            },\n            \"vatAmount\": {\n                \"currency\": \"EUR\",\n                \"value\": \"-0.10\"\n            }\n        }\n    ]\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/orders",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"orders"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 02 Jun 2023 14:05:40 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "3155"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"order\",\n    \"id\": \"ord_rwp6xc\",\n    \"profileId\": \"pfl_eYDqpvw3Cv\",\n    \"method\": \"billie\",\n    \"amount\": {\n        \"value\": \"9.00\",\n        \"currency\": \"EUR\"\n    },\n    \"status\": \"created\",\n    \"isCancelable\": true,\n    \"metadata\": null,\n    \"createdAt\": \"2023-06-02T14:05:39+00:00\",\n    \"expiresAt\": \"2023-06-30T14:05:39+00:00\",\n    \"mode\": \"test\",\n    \"locale\": \"de_DE\",\n    \"billingAddress\": {\n        \"organizationName\": \"Mollie B.V.\",\n        \"streetAndNumber\": \"Keizersgracht 126\",\n        \"postalCode\": \"1234AB\",\n        \"city\": \"Amsterdam\",\n        \"region\": \"Noord-Holland\",\n        \"country\": \"DE\",\n        \"title\": \"Dhr.\",\n        \"givenName\": \"Piet\",\n        \"familyName\": \"Mondriaan\",\n        \"email\": \"piet@mondriaan.com\",\n        \"phone\": \"+3130920207\"\n    },\n    \"shopperCountryMustMatchBillingCountry\": false,\n    \"orderNumber\": \"1337\",\n    \"redirectUrl\": \"https://example.com/landing_page\",\n    \"webhookUrl\": \"https://example.com/redirect\",\n    \"lines\": [\n        {\n            \"resource\": \"orderline\",\n            \"id\": \"odl_2.suuim4\",\n            \"orderId\": \"ord_rwp6xc\",\n            \"name\": \"line 1\",\n            \"sku\": null,\n            \"type\": \"physical\",\n            \"status\": \"created\",\n            \"metadata\": null,\n            \"isCancelable\": false,\n            \"quantity\": 1,\n            \"quantityShipped\": 0,\n            \"amountShipped\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityRefunded\": 0,\n            \"amountRefunded\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityCanceled\": 0,\n            \"amountCanceled\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"shippableQuantity\": 0,\n            \"refundableQuantity\": 0,\n            \"cancelableQuantity\": 0,\n            \"unitPrice\": {\n                \"value\": \"5.00\",\n                \"currency\": \"EUR\"\n            },\n            \"vatRate\": \"10.00\",\n            \"vatAmount\": {\n                \"value\": \"0.45\",\n                \"currency\": \"EUR\"\n            },\n            \"totalAmount\": {\n                \"value\": \"5.00\",\n                \"currency\": \"EUR\"\n            },\n            \"createdAt\": \"2023-06-02T14:05:39+00:00\"\n        },\n        {\n            \"resource\": \"orderline\",\n            \"id\": \"odl_2.z33s4u\",\n            \"orderId\": \"ord_rwp6xc\",\n            \"name\": \"line 2\",\n            \"sku\": null,\n            \"type\": \"physical\",\n            \"status\": \"created\",\n            \"metadata\": null,\n            \"isCancelable\": false,\n            \"quantity\": 1,\n            \"quantityShipped\": 0,\n            \"amountShipped\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityRefunded\": 0,\n            \"amountRefunded\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityCanceled\": 0,\n            \"amountCanceled\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"shippableQuantity\": 0,\n            \"refundableQuantity\": 0,\n            \"cancelableQuantity\": 0,\n            \"unitPrice\": {\n                \"value\": \"5.00\",\n                \"currency\": \"EUR\"\n            },\n            \"vatRate\": \"10.00\",\n            \"vatAmount\": {\n                \"value\": \"0.45\",\n                \"currency\": \"EUR\"\n            },\n            \"totalAmount\": {\n                \"value\": \"5.00\",\n                \"currency\": \"EUR\"\n            },\n            \"createdAt\": \"2023-06-02T14:05:39+00:00\"\n        },\n        {\n            \"resource\": \"orderline\",\n            \"id\": \"odl_2.5nteow\",\n            \"orderId\": \"ord_rwp6xc\",\n            \"name\": \"discount 10%\",\n            \"sku\": null,\n            \"type\": \"discount\",\n            \"status\": \"created\",\n            \"metadata\": null,\n            \"isCancelable\": false,\n            \"quantity\": 1,\n            \"quantityShipped\": 0,\n            \"amountShipped\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityRefunded\": 0,\n            \"amountRefunded\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"quantityCanceled\": 0,\n            \"amountCanceled\": {\n                \"value\": \"0.00\",\n                \"currency\": \"EUR\"\n            },\n            \"shippableQuantity\": 0,\n            \"refundableQuantity\": 0,\n            \"cancelableQuantity\": 0,\n            \"unitPrice\": {\n                \"value\": \"-1.00\",\n                \"currency\": \"EUR\"\n            },\n            \"vatRate\": \"10.00\",\n            \"vatAmount\": {\n                \"value\": \"-0.10\",\n                \"currency\": \"EUR\"\n            },\n            \"totalAmount\": {\n                \"value\": \"-1.00\",\n                \"currency\": \"EUR\"\n            },\n            \"createdAt\": \"2023-06-02T14:05:39+00:00\"\n        }\n    ],\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/orders/ord_rwp6xc?testmode=true\",\n            \"type\": \"application/hal+json\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://my.mollie.com/dashboard/org_16993549/orders/ord_rwp6xc\",\n            \"type\": \"text/html\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/order/rwp6xc\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/orders-api/create-order\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
 								}
 							]
 						},
