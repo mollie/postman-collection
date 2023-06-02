@@ -2900,6 +2900,297 @@
 							]
 						}
 					]
+				},
+				{
+					"name": "Terminals API",
+					"item": [
+						{
+							"name": "List Terminals",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/terminals",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"terminals"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "List Terminals",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/terminals",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"terminals"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 02 Jun 2023 14:30:03 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "5757"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_embedded\": {\n        \"terminals\": [\n            {\n                \"id\": \"term_5YQ8WDcA4UWB5bo7AfDZH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1851664277\",\n                \"currency\": \"EUR\",\n                \"description\": \"Counter in store Amsterdam\",\n                \"createdAt\": \"2023-06-01T08:22:07+00:00\",\n                \"updatedAt\": \"2023-06-01T08:36:25+00:00\"\n            },\n            {\n                \"id\": \"term_fmA5H4CAMsAMZz8bPgzMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009788\",\n                \"currency\": \"EUR\",\n                \"description\": null,\n                \"createdAt\": \"2022-09-27T13:30:36+00:00\",\n                \"updatedAt\": \"2022-09-27T13:37:27+00:00\"\n            },\n            {\n                \"id\": \"term_2rfs4P5CfsEPaene6RgMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009794\",\n                \"currency\": \"EUR\",\n                \"description\": \"Mollie1\",\n                \"createdAt\": \"2022-09-20T12:10:33+00:00\",\n                \"updatedAt\": \"2022-11-14T10:49:06+00:00\"\n            }\n        ]\n    },\n    \"count\": 21,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/terminals-api/list-terminals\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/terminals?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
+								},
+								{
+									"name": "List Terminals for specific profile",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/terminals?profileId=pfl_zcfJRjkf6P",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"terminals"
+											],
+											"query": [
+												{
+													"key": "profileId",
+													"value": "pfl_zcfJRjkf6P"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 02 Jun 2023 14:30:03 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "5757"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_embedded\": {\n        \"terminals\": [\n            {\n                \"id\": \"term_5YQ8WDcA4UWB5bo7AfDZH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1851664277\",\n                \"currency\": \"EUR\",\n                \"description\": \"Counter in store Amsterdam\",\n                \"createdAt\": \"2023-06-01T08:22:07+00:00\",\n                \"updatedAt\": \"2023-06-01T08:36:25+00:00\"\n            },\n            {\n                \"id\": \"term_fmA5H4CAMsAMZz8bPgzMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009788\",\n                \"currency\": \"EUR\",\n                \"description\": null,\n                \"createdAt\": \"2022-09-27T13:30:36+00:00\",\n                \"updatedAt\": \"2022-09-27T13:37:27+00:00\"\n            },\n            {\n                \"id\": \"term_2rfs4P5CfsEPaene6RgMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009794\",\n                \"currency\": \"EUR\",\n                \"description\": \"Mollie1\",\n                \"createdAt\": \"2022-09-20T12:10:33+00:00\",\n                \"updatedAt\": \"2022-11-14T10:49:06+00:00\"\n            }\n        ]\n    },\n    \"count\": 21,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/terminals-api/list-terminals\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/terminals?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
+								},
+								{
+									"name": "Get Test Terminal",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/terminals?testmode=true",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"terminals"
+											],
+											"query": [
+												{
+													"key": "testmode",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 02 Jun 2023 14:30:03 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "5757"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"_embedded\": {\n        \"terminals\": [\n            {\n                \"id\": \"term_5YQ8WDcA4UWB5bo7AfDZH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1851664277\",\n                \"currency\": \"EUR\",\n                \"description\": \"Counter in store Amsterdam\",\n                \"createdAt\": \"2023-06-01T08:22:07+00:00\",\n                \"updatedAt\": \"2023-06-01T08:36:25+00:00\"\n            },\n            {\n                \"id\": \"term_fmA5H4CAMsAMZz8bPgzMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009788\",\n                \"currency\": \"EUR\",\n                \"description\": null,\n                \"createdAt\": \"2022-09-27T13:30:36+00:00\",\n                \"updatedAt\": \"2022-09-27T13:37:27+00:00\"\n            },\n            {\n                \"id\": \"term_2rfs4P5CfsEPaene6RgMH\",\n                \"profileId\": \"pfl_zcfJRjkf6P\",\n                \"status\": \"active\",\n                \"brand\": \"PAX\",\n                \"model\": \"A920\",\n                \"serialNumber\": \"1850009794\",\n                \"currency\": \"EUR\",\n                \"description\": \"Mollie1\",\n                \"createdAt\": \"2022-09-20T12:10:33+00:00\",\n                \"updatedAt\": \"2022-11-14T10:49:06+00:00\"\n            }\n        ]\n    },\n    \"count\": 21,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/terminals-api/list-terminals\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/terminals?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Get Terminal",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/terminals/*id*",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"terminals",
+										"*id*"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Get Terminal",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/terminals/term_5YQ8WDcA4UWB5bo7AfDZH",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"terminals",
+												"term_5YQ8WDcA4UWB5bo7AfDZH"
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Fri, 02 Jun 2023 14:30:03 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "5757"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"id\": \"term_5YQ8WDcA3UCB5bo7AfDZH\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"status\": \"active\",\n    \"brand\": \"PAX\",\n    \"model\": \"A920\",\n    \"serialNumber\": \"1851664277\",\n    \"currency\": \"EUR\",\n    \"description\": \"Counter in store Amsterdam\",\n    \"createdAt\": \"2023-06-01T08:22:07+00:00\",\n    \"updatedAt\": \"2023-06-01T08:36:25+00:00\",\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/terminals-api/list-terminals\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/terminals?limit=50\",\n            \"type\": \"application/hal+json\"\n        }\n    }\n}"
+								}
+							]
+						}
+					]
 				}
 			]
 		},
