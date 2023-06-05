@@ -9757,6 +9757,218 @@
 									"body": "{\n    \"_embedded\": {\n        \"clients\": [\n            {\n                \"resource\": \"client\",\n                \"id\": \"org_13772481\",\n                \"commission\": {\n                    \"count\": 0\n                },\n                \"organizationCreatedAt\": \"2022-01-19T08:43:22+00:00\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/clients/org_13772481\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"organization\": {\n                        \"href\": \"https://api.mollie.com/v2/organization/org_13772481\",\n                        \"type\": \"application/hal+json\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"client\",\n                \"id\": \"org_13514547\",\n                \"commission\": {\n                    \"count\": 0\n                },\n                \"organizationCreatedAt\": \"2021-12-08T15:42:58+00:00\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/clients/org_13514547\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"organization\": {\n                        \"href\": \"https://api.mollie.com/v2/organization/org_13514547\",\n                        \"type\": \"application/hal+json\"\n                    }\n                }\n            },\n            {\n                \"resource\": \"client\",\n                \"id\": \"org_7049691\",\n                \"commission\": {\n                    \"count\": 0\n                },\n                \"organizationCreatedAt\": \"2019-12-06T10:09:32+00:00\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/clients/org_7049691\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"onboarding\": {\n                        \"href\": \"https://api.mollie.com/v2/onboarding/org_7049691\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"organization\": {\n                        \"href\": \"https://api.mollie.com/v2/organization/org_7049691\",\n                        \"type\": \"application/hal+json\"\n                    }\n                }\n            }\n        ]\n    },\n    \"count\": 3,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/partners-api/list-clients\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/clients?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Create client link",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"pm.globals.set(\"clientLink\", response._links.clientLink.href);"
+										],
+										"type": "text/javascript"
+									}
+								}
+							],
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"owner\":{\n        \"email\":\"{{owner.email}}\",\n        \"givenName\": \"{{owner.givenName}}\",\n        \"familyName\":\"{{owner.familyName}}\",\n        \"locale\":\"{{owner.locale}}\"\n    },\n    \"name\":\"{{name}}\",\n    \"address\":{\n        \"streetAndNumber\":\"{{address.streetAndNumber}}\",\n        \"postalCode\":\"{{address.postalCode}}\",\n        \"city\":\"{{address.city}}\",\n        \"country\":\"{{address.country}}\"\n    },\n    \"registrationNumber\":\"{{registrationNumer}}\",\n    \"vatNumber\":\"{{vatNumber}}\"\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/client-links",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"client-links"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create client link all parameters",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"owner\":{\n        \"email\":\"piet@mondriaan.com\",\n        \"givenName\": \"Piet\",\n        \"familyName\":\"Mondriaan\",\n        \"locale\":\"nl_NL\"\n    },\n    \"name\":\"Mollie\",\n    \"address\":{\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1115CW\",\n        \"city\":\"Amsterdam\",\n        \"country\":\"NL\"\n    },\n    \"registrationNumber\":\"30204462\",\n    \"vatNumber\":\"NL815839091B01\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/client-links",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"client-links"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 11:57:18 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "292"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n    \"id\": \"csr_ayCz46QLwCbxpTaSYQQZH\",\n    \"resource\": \"client-link\",\n    \"_links\": {\n        \"clientLink\": {\n            \"href\": \"https://my.mollie.com/dashboard/client-link/csr_ayCz46QLwCbxpTaSYQQZH\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/clients-api/create-client\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Create client link minimal requirements",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"owner\":{\n        \"email\":\"piet@mondriaan.com\",\n        \"givenName\": \"Piet\",\n        \"familyName\":\"Mondriaan\"\n    },\n    \"name\":\"Mollie\",\n    \"address\":{\n        \"country\":\"NL\"\n    }\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/client-links",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"client-links"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 11:57:18 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "292"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [
+										{
+											"expires": "Invalid Date"
+										}
+									],
+									"body": "{\n    \"id\": \"csr_ayCz46QLwCbxpTaSYQQZH\",\n    \"resource\": \"client-link\",\n    \"_links\": {\n        \"clientLink\": {\n            \"href\": \"https://my.mollie.com/dashboard/client-link/csr_ayCz46QLwCbxpTaSYQQZH\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/clients-api/create-client\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Generate client link",
+							"request": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{clientLink}}?client_id={{clientId}}&scope={{scopes}}&state={{$guid}}",
+									"host": [
+										"{{clientLink}}"
+									],
+									"query": [
+										{
+											"key": "client_id",
+											"value": "{{clientId}}",
+											"description": "app client id"
+										},
+										{
+											"key": "scope",
+											"value": "{{scopes}}"
+										},
+										{
+											"key": "state",
+											"value": "{{$guid}}"
+										}
+									]
+								}
+							},
+							"response": []
 						}
 					],
 					"event": [
