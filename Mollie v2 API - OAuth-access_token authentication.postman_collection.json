@@ -216,6 +216,150 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_wuGFwxKB7g\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2022-01-21T11:16:15+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"My first routed payment\",\n    \"method\": \"ideal\",\n    \"metadata\": null,\n    \"status\": \"open\",\n    \"isCancelable\": false,\n    \"expiresAt\": \"2022-01-21T11:31:15+00:00\",\n    \"profileId\": \"pfl_85dxyKqNHa\",\n    \"sequenceType\": \"oneoff\",\n    \"redirectUrl\": \"https://www.mollie.com/en\",\n    \"webhookUrl\": \"https://www.mollie.com/en\",\n    \"routing\": [\n        {\n            \"id\": \"rt_p70g7o\",\n            \"amount\": {\n                \"value\": \"7.50\",\n                \"currency\": \"EUR\"\n            },\n            \"destination\": {\n                \"type\": \"organization\",\n                \"organizationId\": \"org_7049691\"\n            }\n        }\n    ],\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_wuGFwxKB7g?testmode=true\",\n            \"type\": \"application/hal+json\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/select-issuer/ideal/wuGFwxKB7g\",\n            \"type\": \"text/html\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://www.mollie.com/dashboard/org_13514547/payments/tr_wuGFwxKB7g\",\n            \"type\": \"text/html\"\n        },\n        \"routes\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_wuGFwxKB7g/routes?testmode=true\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/create-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Card authorization with manual capture mode",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureMode\":\"manual\",\n    \"profileId\":\"pfl_zcfJRjkf6P\",\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/payments",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 12:56:29 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Apache"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "content-length",
+											"value": "961"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google, 1.1 google"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_HnJygmFKY2\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2023-06-05T12:56:30+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"This is the description\",\n    \"method\": \"creditcard\",\n    \"metadata\": null,\n    \"status\": \"open\",\n    \"isCancelable\": false,\n    \"expiresAt\": \"2023-06-05T13:11:30+00:00\",\n    \"amountCaptured\": {\n        \"value\": \"0.00\",\n        \"currency\": \"EUR\"\n    },\n    \"locale\": \"nl_NL\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"sequenceType\": \"oneoff\",\n    \"captureMode\": \"manual\",\n    \"redirectUrl\": \"https://example.com/redirect\",\n    \"webhookUrl\": \"https://example.com/webhook\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_HnJygmFKY2\",\n            \"type\": \"application/hal+json\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/credit-card/embedded/HnJygmFKY2\",\n            \"type\": \"text/html\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://my.mollie.com/dashboard/org_7049691/payments/tr_HnJygmFKY2\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/create-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Card authorization with delayed automatic capture",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureDelay\":\"2 days\",\n    \"profileId\":\"pfl_zcfJRjkf6P\",\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/payments",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 12:59:45 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Apache"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "content-length",
+											"value": "988"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google, 1.1 google"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_EZLbsLBhYb\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2023-06-05T12:59:45+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"This is the description\",\n    \"method\": \"creditcard\",\n    \"metadata\": null,\n    \"status\": \"open\",\n    \"isCancelable\": false,\n    \"expiresAt\": \"2023-06-05T13:14:45+00:00\",\n    \"amountCaptured\": {\n        \"value\": \"0.00\",\n        \"currency\": \"EUR\"\n    },\n    \"locale\": \"nl_NL\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"sequenceType\": \"oneoff\",\n    \"captureMode\": \"automatic\",\n    \"captureDelay\": \"2 days\",\n    \"redirectUrl\": \"https://example.com/redirect\",\n    \"webhookUrl\": \"https://example.com/webhook\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_EZLbsLBhYb\",\n            \"type\": \"application/hal+json\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/credit-card/embedded/EZLbsLBhYb\",\n            \"type\": \"text/html\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://my.mollie.com/dashboard/org_7049691/payments/tr_EZLbsLBhYb\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/create-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -360,6 +504,146 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_hSW7aK9NJA\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2022-01-14T14:57:33+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"This is the description of the payment\",\n    \"method\": \"ideal\",\n    \"metadata\": null,\n    \"status\": \"open\",\n    \"isCancelable\": false,\n    \"expiresAt\": \"2022-01-14T15:12:33+00:00\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"sequenceType\": \"oneoff\",\n    \"redirectUrl\": \"https://example.com/redirect\",\n    \"webhookUrl\": \"https://example.com/webhook\",\n    \"details\": {\n        \"qrCode\": {\n            \"src\": \"https://qr7.ideal.nl/ideal-qr/qr/get/e9b52d78-9af9-4b4c-b7f7-f63499525d22\",\n            \"width\": 180,\n            \"height\": 180\n        }\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_hSW7aK9NJA?include=details.qrCode\",\n            \"type\": \"application/hal+json\"\n        },\n        \"checkout\": {\n            \"href\": \"https://www.mollie.com/checkout/select-issuer/ideal/hSW7aK9NJA\",\n            \"type\": \"text/html\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://www.mollie.com/dashboard/org_7049691/payments/tr_hSW7aK9NJA\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/get-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Get authorized card payment",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/payments/tr_HnJygmFKY2?testmode=true",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments",
+												"tr_HnJygmFKY2"
+											],
+											"query": [
+												{
+													"key": "testmode",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 12:58:04 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Apache"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "content-length",
+											"value": "1142"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google, 1.1 google"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_HnJygmFKY2\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2023-06-05T12:56:30+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"This is the description\",\n    \"method\": \"creditcard\",\n    \"metadata\": null,\n    \"status\": \"authorized\",\n    \"authorizedAt\": \"2023-06-05T12:57:50+00:00\",\n    \"captureBefore\": \"2023-06-12T00:00:00+00:00\",\n    \"amountCaptured\": {\n        \"value\": \"0.00\",\n        \"currency\": \"EUR\"\n    },\n    \"locale\": \"nl_NL\",\n    \"countryCode\": \"NL\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"sequenceType\": \"oneoff\",\n    \"captureMode\": \"manual\",\n    \"redirectUrl\": \"https://example.com/redirect\",\n    \"webhookUrl\": \"https://example.com/webhook\",\n    \"settlementAmount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"details\": {\n        \"cardToken\": \"tkn_zv65vAtest\",\n        \"cardNumber\": \"4444\",\n        \"cardHolder\": \"T. TEST\",\n        \"cardAudience\": \"consumer\",\n        \"cardLabel\": \"Mastercard\",\n        \"cardCountryCode\": \"NL\",\n        \"cardSecurity\": \"3dsecure\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_HnJygmFKY2\",\n            \"type\": \"application/hal+json\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://my.mollie.com/dashboard/org_7049691/payments/tr_HnJygmFKY2\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/get-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Get partially captured card payment",
+									"originalRequest": {
+										"method": "GET",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/payments/tr_oWpmDXm6sT?testmode=true",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments",
+												"tr_oWpmDXm6sT"
+											],
+											"query": [
+												{
+													"key": "testmode",
+													"value": "true"
+												}
+											]
+										}
+									},
+									"status": "OK",
+									"code": 200,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 13:07:37 GMT"
+										},
+										{
+											"key": "server",
+											"value": "Apache"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "content-length",
+											"value": "1450"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "alt-svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google, 1.1 google"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"payment\",\n    \"id\": \"tr_oWpmDXm6sT\",\n    \"mode\": \"test\",\n    \"createdAt\": \"2023-06-05T13:06:22+00:00\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\": \"This is the description\",\n    \"method\": \"creditcard\",\n    \"metadata\": null,\n    \"status\": \"paid\",\n    \"paidAt\": \"2023-06-05T13:07:12+00:00\",\n    \"amountRefunded\": {\n        \"value\": \"0.00\",\n        \"currency\": \"EUR\"\n    },\n    \"amountRemaining\": {\n        \"value\": \"8.00\",\n        \"currency\": \"EUR\"\n    },\n    \"amountCaptured\": {\n        \"value\": \"8.00\",\n        \"currency\": \"EUR\"\n    },\n    \"locale\": \"nl_NL\",\n    \"countryCode\": \"NL\",\n    \"profileId\": \"pfl_zcfJRjkf6P\",\n    \"sequenceType\": \"oneoff\",\n    \"captureMode\": \"manual\",\n    \"redirectUrl\": \"https://example.com/redirect\",\n    \"webhookUrl\": \"https://example.com/webhook\",\n    \"settlementAmount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"details\": {\n        \"cardToken\": \"tkn_KPz5vAtest\",\n        \"cardNumber\": \"4444\",\n        \"cardHolder\": \"T. TEST\",\n        \"cardAudience\": \"consumer\",\n        \"cardLabel\": \"Mastercard\",\n        \"cardCountryCode\": \"NL\",\n        \"cardSecurity\": \"3dsecure\",\n        \"feeRegion\": \"other\"\n    },\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_oWpmDXm6sT\",\n            \"type\": \"application/hal+json\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://my.mollie.com/dashboard/org_7049691/payments/tr_oWpmDXm6sT\",\n            \"type\": \"text/html\"\n        },\n        \"changePaymentState\": {\n            \"href\": \"https://www.mollie.com/checkout/test-mode?method=creditcard&token=5.tvtgvi\",\n            \"type\": \"text/html\"\n        },\n        \"captures\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_oWpmDXm6sT/captures\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/payments-api/get-payment\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
 								}
 							]
 						},
@@ -2526,6 +2810,181 @@
 									],
 									"cookie": [],
 									"body": "{\n    \"_embedded\": {\n        \"captures\": [\n            {\n                \"resource\": \"capture\",\n                \"id\": \"cpt_kv6nas\",\n                \"mode\": \"test\",\n                \"amount\": {\n                    \"value\": \"467.92\",\n                    \"currency\": \"EUR\"\n                },\n                \"settlementAmount\": {\n                    \"value\": \"467.92\",\n                    \"currency\": \"EUR\"\n                },\n                \"createdAt\": \"2021-06-03T11:50:58+00:00\",\n                \"paymentId\": \"tr_V9kqkGtyUH\",\n                \"shipmentId\": \"shp_gbgol1\",\n                \"_links\": {\n                    \"self\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_V9kqkGtyUH/captures/cpt_kv6nas\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"payment\": {\n                        \"href\": \"https://api.mollie.com/v2/payments/tr_V9kqkGtyUH\",\n                        \"type\": \"application/hal+json\"\n                    },\n                    \"shipment\": {\n                        \"href\": \"https://api.mollie.com/v2/orders/ord_uvpptr/shipments/shp_gbgol1\",\n                        \"type\": \"application/hal+json\"\n                    }\n                }\n            }\n        ]\n    },\n    \"count\": 1,\n    \"_links\": {\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/captures-api/list-captures\",\n            \"type\": \"text/html\"\n        },\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_V9kqkGtyUH/captures?limit=50\",\n            \"type\": \"application/hal+json\"\n        },\n        \"previous\": null,\n        \"next\": null\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Create capture",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"body": {
+									"mode": "raw",
+									"raw": "{\n    \"amount\":{\n        \"value\": \"{{value}}\",\n        \"currency\": \"{{currency}}\"\n    },\n    \"description\":\"{{description}}\",\n    \"testmode\":true\n}",
+									"options": {
+										"raw": {
+											"language": "json"
+										}
+									}
+								},
+								"url": {
+									"raw": "{{apiUrl}}/payments/*id*/captures?testmode=true",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"payments",
+										"*id*",
+										"captures"
+									],
+									"query": [
+										{
+											"key": "testmode",
+											"value": "true"
+										}
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Create full capture",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"description\":\"Capture order 1337\",\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/payments/tr_HnJygmFKY2/captures",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments",
+												"tr_HnJygmFKY2",
+												"captures"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 13:04:25 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "589"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"capture\",\n    \"id\": \"cpt_mVQkbT26yQwyqqVWRXQZH\",\n    \"mode\": \"test\",\n    \"amount\": {\n        \"value\": \"10.00\",\n        \"currency\": \"EUR\"\n    },\n    \"createdAt\": \"2023-06-05T13:04:25+00:00\",\n    \"description\": \"Capture order 1337\",\n    \"status\": \"pending\",\n    \"paymentId\": \"tr_HnJygmFKY2\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_HnJygmFKY2/captures/cpt_mVQkbT26yQwyqqVWRXQZH\",\n            \"type\": \"application/hal+json\"\n        },\n        \"payment\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_HnJygmFKY2\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/captures-api/create-capture\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Create partial capture",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"amount\":{\n        \"value\": \"8.00\",\n        \"currency\": \"EUR\"\n    },\n    \"description\":\"Partial capture order 1337\",\n    \"testmode\":true\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/payments/tr_oWpmDXm6sT/captures",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"payments",
+												"tr_oWpmDXm6sT",
+												"captures"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "server",
+											"value": "nginx"
+										},
+										{
+											"key": "date",
+											"value": "Mon, 05 Jun 2023 13:07:10 GMT"
+										},
+										{
+											"key": "content-type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "content-length",
+											"value": "596"
+										},
+										{
+											"key": "x-robots-tag",
+											"value": "noindex"
+										},
+										{
+											"key": "X-XSS-Protection",
+											"value": "1; mode=block"
+										},
+										{
+											"key": "Via",
+											"value": "1.1 google"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										},
+										{
+											"key": "Alt-Svc",
+											"value": "h3=\":443\"; ma=2592000,h3-29=\":443\"; ma=2592000"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"capture\",\n    \"id\": \"cpt_F93g43fUnxFqGnQZhXQZH\",\n    \"mode\": \"test\",\n    \"amount\": {\n        \"value\": \"8.00\",\n        \"currency\": \"EUR\"\n    },\n    \"createdAt\": \"2023-06-05T13:07:10+00:00\",\n    \"description\": \"Partial capture order 1337\",\n    \"status\": \"pending\",\n    \"paymentId\": \"tr_oWpmDXm6sT\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_oWpmDXm6sT/captures/cpt_F93g43fUnxFqGnQZhXQZH\",\n            \"type\": \"application/hal+json\"\n        },\n        \"payment\": {\n            \"href\": \"https://api.mollie.com/v2/payments/tr_oWpmDXm6sT\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/captures-api/create-capture\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
 								}
 							]
 						}
