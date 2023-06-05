@@ -2828,7 +2828,7 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/*id*/captures?testmode=true",
+									"raw": "{{apiUrl}}/payments/*id*/captures",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -2836,12 +2836,6 @@
 										"payments",
 										"*id*",
 										"captures"
-									],
-									"query": [
-										{
-											"key": "testmode",
-											"value": "true"
-										}
 									]
 								}
 							},
