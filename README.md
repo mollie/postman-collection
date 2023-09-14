@@ -14,9 +14,10 @@ Most endpoint payloads contain variables instead of static values. All variables
 
 ## Credentials
 The JSON files contain variables instead of credentials. Postman supports authentication inheritance, so the variables are often called on higher-level objects (collection or folder). Best practice is to create a Postman Environment and initiate all credentials there to prevent credentials from appearing in the collection itself. Besides, you can easily create multiple environments and use them to switch between Mollie accounts or App credentials.
-```
-Warning: Never include confidential information such as passwords, authentication keys, or oAuth tokens in publicly accessible Postman workspaces or collections.
-```
+
+> **Warning**
+Never include confidential information such as passwords, authentication keys, or oAuth tokens in publicly accessible Postman workspaces or collections.
+
 ## OAuth
 To manually retrieve the access tokens of another account using OAuth, use the endpoints in the Connect folder of the collection that utilises OAuth, that is, access tokens:
 
