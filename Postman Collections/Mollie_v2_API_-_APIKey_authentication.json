@@ -1,10 +1,9 @@
 {
 	"info": {
-		"_postman_id": "41e8a752-cefd-4ff3-aeee-5a60a18a9543",
+		"_postman_id": "ad11ae75-1606-4a40-8267-1867fb021a94",
 		"name": "Mollie v2 API - APIKey authentication",
 		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
-		"_exporter_id": "18789175",
-		"_collection_link": "https://testmollietech.postman.co/workspace/Mollie-API-postman-project~919efc9c-e984-40e1-8a0d-ed22b9402db7/collection/18789175-41e8a752-cefd-4ff3-aeee-5a60a18a9543?action=share&creator=18789175&source=collection_link"
+		"_exporter_id": "34840958"
 	},
 	"item": [
 		{
@@ -17,12 +16,14 @@
 							"name": "Create payment",
 							"event": [
 								{
-									"listen": "prerequest",
+									"listen": "test",
 									"script": {
 										"exec": [
-											""
+											"const response = pm.response.json();",
+											"pm.environment.set(\"paymentId\", response.id);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -31,7 +32,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"{{currency}}\",\n        \"value\":\"{{value}}\"\n    },\n    \"description\":\"{{description}}\",\n    \"redirectUrl\":\"{{redirectUrl}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"locale\":\"{{locale}}\",\n    \"method\":\"{{method}}\",\n    \"restrictPaymentMethodsToCountry\":\"{{restrictPaymentMethodsToCountry}}\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"{{billingAddress.postalCode}}\",\n        \"postalCode\":\"{{billingAddress.country}}\",\n        \"city\":\"{{billingAddress.citt}}\",\n        \"region\":\"{{billingAddress.region}}\",\n        \"country\":\"{{billingAddress.country}}\"\n    },\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
+									"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"{{currency}}\",\n        \"value\":\"{{value}}\"\n    },\n    \"description\":\"{{description}}\",\n    \"redirectUrl\":\"{{redirectUrl}}\",\n    \"cancelUrl\":\"{{cancelUrl}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"locale\":\"{{locale}}\",\n    \"method\":\"{{method}}\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"{{billingAddress.postalCode}}\",\n        \"postalCode\":\"{{billingAddress.country}}\",\n        \"city\":\"{{billingAddress.citt}}\",\n        \"region\":\"{{billingAddress.region}}\",\n        \"country\":\"{{billingAddress.country}}\"\n    },\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -112,7 +113,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description of the payment\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"method\":\"ideal\",\n    \"issuer\":\"ideal_RABONL2U\"\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description of the payment\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"method\":\"ideal\",\n    \"issuer\":\"ideal_RABONL2U\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -168,7 +169,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    }\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -224,7 +225,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description Order ABS123\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"paypal\",\n    \"digitalGoods\":false,\n   \"shippingAddress\":{\n      \"streetAndNumber\":\"{{shippingAddress.streetAndNumber}}\",\n      \"streetAdditional\":\"{{shippingAddress.streetAdditional}}\",\n      \"city\":\"{{shippingAddress.city}}\",\n      \"region\":\"{{shippingAddress.region}}\",\n      \"postalCode\":\"{{shippingAddress.postalCode}}\",\n      \"country\":\"{{shippingAddress.country}}\",\n      \"givenName\":\"{{shippingAddress.givenName}}\",\n      \"familyName\":\"{{shippingAddress.familyName}}\"\n   }\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description Order ABS123\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"paypal\",\n    \"digitalGoods\":false,\n   \"shippingAddress\":{\n      \"streetAndNumber\":\"{{shippingAddress.streetAndNumber}}\",\n      \"streetAdditional\":\"{{shippingAddress.streetAdditional}}\",\n      \"city\":\"{{shippingAddress.city}}\",\n      \"region\":\"{{shippingAddress.region}}\",\n      \"postalCode\":\"{{shippingAddress.postalCode}}\",\n      \"country\":\"{{shippingAddress.country}}\",\n      \"givenName\":\"{{shippingAddress.givenName}}\",\n      \"familyName\":\"{{shippingAddress.familyName}}\"\n   }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -280,7 +281,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description of the payment\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"method\":\"ideal\"\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description of the payment\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"method\":\"ideal\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -342,7 +343,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"0.00\"\n    },\n    \"description\":\"Direct debit charge as recuring payment\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"locale\":\"en_US\",\n    \"method\":\"creditcard\",\n    \"sequenceType\":\"first\",\n    \"customerId\":\"cst_tKt44u85MM\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"0.00\"\n    },\n    \"description\":\"Direct debit charge as recuring payment\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"en_US\",\n    \"method\":\"creditcard\",\n    \"sequenceType\":\"first\",\n    \"customerId\":\"cst_tKt44u85MM\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -454,7 +455,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureMode\":\"manual\"\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureMode\":\"manual\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -526,7 +527,7 @@
 										"header": [],
 										"body": {
 											"mode": "raw",
-											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureDelay\":\"2 days\"\n}",
+											"raw": "{\n    \"amount\":\n    {\n        \"currency\":\"EUR\",\n        \"value\":\"10.00\"\n    },\n    \"description\":\"This is the description\",\n    \"redirectUrl\":\"https://example.com/redirect\",\n    \"cancelUrl\":\"https://example.com/payment-cancelled\",\n    \"webhookUrl\":\"https://example.com/webhook\",\n    \"locale\":\"nl_NL\",\n    \"method\":\"creditcard\",\n    \"billingAddress\":\n    {\n        \"streetAndNumber\":\"Keizersgracht 126\",\n        \"postalCode\":\"1234AB\",\n        \"city\":\"Amsterdam\",\n        \"region\":\"Noord-Holland\",\n        \"country\":\"NL\"\n    },\n    \"captureDelay\":\"2 days\"\n}",
 											"options": {
 												"raw": {
 													"language": "json"
@@ -602,7 +603,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -610,13 +612,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/payments/*id*",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"*id*"
+										"{{paymentId}}"
 									]
 								}
 							},
@@ -862,7 +864,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -871,7 +874,7 @@
 								"header": [],
 								"body": {
 									"mode": "raw",
-									"raw": "{\n    \"description\":\"{{description}}\",\n    \"redirectUrl\":\"{{redirectUrl}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"locale\":\"{{locale}}\",\n    \"method\":\"{{method}}\",\n    \"restrictPaymentMethodsToCountry\":\"{{restrictPaymentMethodsToCountry}}\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
+									"raw": "{\n    \"description\":\"{{description}}\",\n    \"redirectUrl\":\"{{redirectUrl}}\",\n    \"webhookUrl\":\"{{webhookUrl}}\",\n    \"locale\":\"{{locale}}\",\n    \"method\":\"{{method}}\",\n    \"metadata\":\n    {\n        \"someProperty\":\"someValue\",\n        \"anotherProperty\":\"anotherValue\"\n    }\n}",
 									"options": {
 										"raw": {
 											"language": "json"
@@ -879,13 +882,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/tr_FE9UrEs9zU",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"tr_FE9UrEs9zU"
+										"{{paymentId}}"
 									]
 								}
 							},
@@ -1015,7 +1018,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1032,13 +1036,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/tr_FE9UrEs9zU",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"tr_FE9UrEs9zU"
+										"{{paymentId}}"
 									]
 								}
 							},
@@ -1053,7 +1057,8 @@
 										"exec": [
 											""
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								},
 								{
@@ -1061,9 +1066,10 @@
 									"script": {
 										"exec": [
 											"const response = pm.response.json();",
-											"pm.globals.set(\"nextPayments\", response._links.next.href);"
+											"pm.collectionVariables.set(\"nextPayments\", response._links.next.href);"
 										],
-										"type": "text/javascript"
+										"type": "text/javascript",
+										"packages": {}
 									}
 								}
 							],
@@ -1480,7 +1486,7 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/methods/all?locale={{locale}}&amount[currency]={{currency}}&amount[value]={{value}}",
+									"raw": "{{apiUrl}}/methods/all?locale={{locale}}&amount[currency]={{currency}}&amount[value]={{value}}&include=issuers&include=pricing",
 									"host": [
 										"{{apiUrl}}"
 									],
@@ -1502,9 +1508,12 @@
 											"value": "{{value}}"
 										},
 										{
-											"key": "",
-											"value": "",
-											"disabled": true
+											"key": "include",
+											"value": "issuers"
+										},
+										{
+											"key": "include",
+											"value": "pricing"
 										}
 									]
 								}
@@ -1885,6 +1894,420 @@
 									"body": "{\n    \"resource\": \"method\",\n    \"id\": \"ideal\",\n    \"description\": \"iDEAL\",\n    \"minimumAmount\": {\n        \"value\": \"0.01\",\n        \"currency\": \"EUR\"\n    },\n    \"maximumAmount\": {\n        \"value\": \"50000.00\",\n        \"currency\": \"EUR\"\n    },\n    \"image\": {\n        \"size1x\": \"https://www.mollie.com/external/icons/payment-methods/ideal.png\",\n        \"size2x\": \"https://www.mollie.com/external/icons/payment-methods/ideal%402x.png\",\n        \"svg\": \"https://www.mollie.com/external/icons/payment-methods/ideal.svg\"\n    },\n    \"status\": \"activated\",\n    \"pricing\": [\n        {\n            \"description\": \"Netherlands\",\n            \"fixed\": {\n                \"value\": \"0.29\",\n                \"currency\": \"EUR\"\n            },\n            \"variable\": \"0\"\n        }\n    ],\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/methods/ideal?include=pricing\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/methods-api/get-method\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
 								}
 							]
+						},
+						{
+							"name": "Enable payment method",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/profiles/me/methods/*id*",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"profiles",
+										"me",
+										"methods",
+										"*id*"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Enable creditcard payment method",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/creditcard",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"creditcard"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jan 2022 12:38:42 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "661"
+										},
+										{
+											"key": "X-Robots-Tag",
+											"value": "noindex"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"method\",\n    \"id\": \"creditcard\",\n    \"description\": \"Credit card\",\n    \"minimumAmount\": {\n        \"value\": \"0.01\",\n        \"currency\": \"EUR\"\n    },\n    \"maximumAmount\": {\n        \"value\": \"500.00\",\n        \"currency\": \"EUR\"\n    },\n    \"image\": {\n        \"size1x\": \"https://www.mollie.com/external/icons/payment-methods/creditcard.png\",\n        \"size2x\": \"https://www.mollie.com/external/icons/payment-methods/creditcard%402x.png\",\n        \"svg\": \"https://www.mollie.com/external/icons/payment-methods/creditcard.svg\"\n    },\n    \"status\": \"pending-review\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/methods/creditcard\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/profiles-api/enable-method\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								},
+								{
+									"name": "Enable ideal payment method",
+									"originalRequest": {
+										"method": "POST",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/ideal",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"ideal"
+											]
+										}
+									},
+									"status": "Created",
+									"code": 201,
+									"_postman_previewlanguage": "json",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jan 2022 12:39:03 GMT"
+										},
+										{
+											"key": "Content-Type",
+											"value": "application/hal+json"
+										},
+										{
+											"key": "Content-Length",
+											"value": "632"
+										},
+										{
+											"key": "X-Robots-Tag",
+											"value": "noindex"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										}
+									],
+									"cookie": [],
+									"body": "{\n    \"resource\": \"method\",\n    \"id\": \"ideal\",\n    \"description\": \"iDEAL\",\n    \"minimumAmount\": {\n        \"value\": \"0.01\",\n        \"currency\": \"EUR\"\n    },\n    \"maximumAmount\": {\n        \"value\": \"50000.00\",\n        \"currency\": \"EUR\"\n    },\n    \"image\": {\n        \"size1x\": \"https://www.mollie.com/external/icons/payment-methods/ideal.png\",\n        \"size2x\": \"https://www.mollie.com/external/icons/payment-methods/ideal%402x.png\",\n        \"svg\": \"https://www.mollie.com/external/icons/payment-methods/ideal.svg\"\n    },\n    \"status\": \"pending-review\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/methods/ideal\",\n            \"type\": \"application/hal+json\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/profiles-api/enable-method\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+								}
+							]
+						},
+						{
+							"name": "Disable payment method",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/profiles/me/methods/*id*",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"profiles",
+										"me",
+										"methods",
+										"*id*"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Disable creditcard payment method",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/creditcard",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"creditcard"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jan 2022 12:39:57 GMT"
+										},
+										{
+											"key": "X-Robots-Tag",
+											"value": "noindex"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Disable ideal payment method",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/ideal",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"ideal"
+											]
+										}
+									},
+									"status": "No Content",
+									"code": 204,
+									"_postman_previewlanguage": "plain",
+									"header": [
+										{
+											"key": "Server",
+											"value": "nginx"
+										},
+										{
+											"key": "Date",
+											"value": "Wed, 19 Jan 2022 12:39:57 GMT"
+										},
+										{
+											"key": "X-Robots-Tag",
+											"value": "noindex"
+										},
+										{
+											"key": "Strict-Transport-Security",
+											"value": "max-age=31536000; includeSubDomains; preload"
+										}
+									],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Enable payment method issuer",
+							"request": {
+								"method": "POST",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/profiles/me/methods/*methodId*/issuers/*id*",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"profiles",
+										"me",
+										"methods",
+										"*methodId*",
+										"issuers",
+										"*id*"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Enable giftcard",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"contractId\": \"yourcontractid\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/giftcard/issuers/amsterdamimpactgiftcard",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"giftcard",
+												"issuers",
+												"amsterdamimpactgiftcard"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Enable voucher",
+									"originalRequest": {
+										"method": "POST",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"body": {
+											"mode": "raw",
+											"raw": "{\n    \"contractId\": \"yourcontractid\"\n}",
+											"options": {
+												"raw": {
+													"language": "json"
+												}
+											}
+										},
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/voucher/issuers/monizze-cadeau",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"voucher",
+												"issuers",
+												"monizze-cadeau"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
+						},
+						{
+							"name": "Disable payment method issuer",
+							"request": {
+								"method": "DELETE",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/profiles/me/methods/*methodId*/issuers/*id*",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"profiles",
+										"me",
+										"methods",
+										"*methodId*",
+										"issuers",
+										"*id*"
+									]
+								}
+							},
+							"response": [
+								{
+									"name": "Disable giftcard",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/giftcard/issuers/amsterdamimpactgiftcard",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"giftcard",
+												"issuers",
+												"amsterdamimpactgiftcard"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								},
+								{
+									"name": "Disable voucher",
+									"originalRequest": {
+										"method": "DELETE",
+										"header": [
+											{
+												"key": "Content-Type",
+												"value": "application/json",
+												"type": "text"
+											}
+										],
+										"url": {
+											"raw": "{{apiUrl}}/profiles/me/methods/voucher/issuers/monizze-cadeau",
+											"host": [
+												"{{apiUrl}}"
+											],
+											"path": [
+												"profiles",
+												"me",
+												"methods",
+												"voucher",
+												"issuers",
+												"monizze-cadeau"
+											]
+										}
+									},
+									"_postman_previewlanguage": "Text",
+									"header": [],
+									"cookie": [],
+									"body": ""
+								}
+							]
 						}
 					]
 				},
@@ -1893,6 +2316,19 @@
 					"item": [
 						{
 							"name": "Create payment refund",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"pm.environment.set(\"refundId\", response.id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "POST",
 								"header": [],
@@ -1906,13 +2342,13 @@
 									}
 								},
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}/refunds",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"*paymentId*",
+										"{{paymentId}}",
 										"refunds"
 									]
 								}
@@ -1984,15 +2420,15 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds/*id*",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}/refunds/{{refundId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"*paymentId*",
+										"{{paymentId}}",
 										"refunds",
-										"*id*"
+										"{{refundId}}"
 									]
 								}
 							},
@@ -2055,15 +2491,15 @@
 								"method": "DELETE",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds/*id*",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}/refunds/{{refundId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"*paymentId*",
+										"{{paymentId}}",
 										"refunds",
-										"*id*"
+										"{{refundId}}"
 									]
 								}
 							},
@@ -2118,13 +2554,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/payments/*paymentId*/refunds",
+									"raw": "{{apiUrl}}/payments/{{paymentId}}/refunds",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"payments",
-										"*paymentId*",
+										"{{paymentId}}",
 										"refunds"
 									]
 								}
@@ -3273,6 +3709,19 @@
 					"item": [
 						{
 							"name": "List Terminals",
+							"event": [
+								{
+									"listen": "test",
+									"script": {
+										"exec": [
+											"const response = pm.response.json();",
+											"pm.environment.set(\"terminalId\", response._embedded.terminals[0].id);"
+										],
+										"type": "text/javascript",
+										"packages": {}
+									}
+								}
+							],
 							"request": {
 								"method": "GET",
 								"header": [],
@@ -3354,13 +3803,13 @@
 								"method": "GET",
 								"header": [],
 								"url": {
-									"raw": "{{apiUrl}}/terminals/*id*",
+									"raw": "{{apiUrl}}/terminals/{{terminalId}}",
 									"host": [
 										"{{apiUrl}}"
 									],
 									"path": [
 										"terminals",
-										"*id*"
+										"{{terminalId}}"
 									]
 								}
 							},
@@ -6351,6 +6800,101 @@
 					]
 				}
 			]
+		},
+		{
+			"name": "Profiles API",
+			"item": [
+				{
+					"name": "Get current profile",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"const response = pm.response.json();",
+									"pm.environment.set(\"profileId\", response.id);"
+								],
+								"type": "text/javascript",
+								"packages": {}
+							}
+						}
+					],
+					"request": {
+						"auth": {
+							"type": "bearer",
+							"bearer": [
+								{
+									"key": "token",
+									"value": "{{apiKeyTest}}",
+									"type": "string"
+								}
+							]
+						},
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{apiUrl}}/profiles/me",
+							"host": [
+								"{{apiUrl}}"
+							],
+							"path": [
+								"profiles",
+								"me"
+							]
+						}
+					},
+					"response": [
+						{
+							"name": "List current profile",
+							"originalRequest": {
+								"method": "GET",
+								"header": [],
+								"url": {
+									"raw": "{{apiUrl}}/profiles/me",
+									"host": [
+										"{{apiUrl}}"
+									],
+									"path": [
+										"profiles",
+										"me"
+									]
+								}
+							},
+							"status": "OK",
+							"code": 200,
+							"_postman_previewlanguage": "json",
+							"header": [
+								{
+									"key": "Server",
+									"value": "nginx"
+								},
+								{
+									"key": "Date",
+									"value": "Wed, 19 Jan 2022 12:36:44 GMT"
+								},
+								{
+									"key": "Content-Type",
+									"value": "application/hal+json"
+								},
+								{
+									"key": "Content-Length",
+									"value": "1111"
+								},
+								{
+									"key": "X-Robots-Tag",
+									"value": "noindex"
+								},
+								{
+									"key": "Strict-Transport-Security",
+									"value": "max-age=31536000; includeSubDomains; preload"
+								}
+							],
+							"cookie": [],
+							"body": "{\n    \"resource\": \"profile\",\n    \"id\": \"pfl_85dxyKqNHa\",\n    \"mode\": \"live\",\n    \"name\": \"Jonas Test BV\",\n    \"website\": \"https://example.com\",\n    \"email\": \"test@mollie.com\",\n    \"phone\": \"+31612345678\",\n    \"categoryCode\": 6012,\n    \"businessCategory\": \"MONEY_SERVICES\",\n    \"status\": \"verified\",\n    \"createdAt\": \"2021-12-08T15:42:58+00:00\",\n    \"_links\": {\n        \"self\": {\n            \"href\": \"https://api.mollie.com/v2/profiles/pfl_85dxyKqNHa?testmode=true\",\n            \"type\": \"application/hal+json\"\n        },\n        \"dashboard\": {\n            \"href\": \"https://www.mollie.com/dashboard/org_13514547/settings/profiles/pfl_85dxyKqNHa\",\n            \"type\": \"text/html\"\n        },\n        \"chargebacks\": {\n            \"href\": \"https://api.mollie.com/v2/chargebacks\",\n            \"type\": \"application/hal+json\"\n        },\n        \"methods\": {\n            \"href\": \"https://api.mollie.com/v2/methods\",\n            \"type\": \"application/hal+json\"\n        },\n        \"payments\": {\n            \"href\": \"https://api.mollie.com/v2/payments\",\n            \"type\": \"application/hal+json\"\n        },\n        \"refunds\": {\n            \"href\": \"https://api.mollie.com/v2/refunds\",\n            \"type\": \"application/hal+json\"\n        },\n        \"checkoutPreviewUrl\": {\n            \"href\": \"https://www.mollie.com/checkout/preview/pfl_85dxyKqNHa\",\n            \"type\": \"text/html\"\n        },\n        \"documentation\": {\n            \"href\": \"https://docs.mollie.com/reference/v2/profiles-api/get-profile-me\",\n            \"type\": \"text/html\"\n        }\n    }\n}"
+						}
+					]
+				}
+			]
 		}
 	],
 	"auth": {
@@ -6427,6 +6971,11 @@
 		{
 			"key": "redirectUrl",
 			"value": "https://example.com/landing_page"
+		},
+		{
+			"key": "cancelUrl",
+			"value": "",
+			"type": "string"
 		},
 		{
 			"key": "webhookUrl",

@@ -22,13 +22,15 @@ Never include confidential information such as passwords, authentication keys, o
 To manually retrieve the access tokens of another account using OAuth, use the endpoints in the Connect folder of the collection that utilises OAuth, that is, access tokens:
 
 1. Go to **Developers** > **Your apps** in your Mollie Dashboard and register an app in the “partner” account (the one that takes control).
-2. Place the client ID and secret in the authorization settings ‘OAuth API’ folder or in the environment variables.
+2. Place the client ID and secret in the authorization settings ‘OAuth API’ folder or save them as environment variables.
 3. Place the `redirect_url` in the ’Authorize’ request's payload and add the desired scopes, separated by spaces. See the [Authorize documentation](https://docs.mollie.com/reference/oauth2/authorize) for the other required parameters.
-4. Send the ‘Authorise’ request. This constructs the OAuth URL that you can fetch from the Postman console.
-5. Log in to the “submerchant” Mollie account (the account that is controlled) and navigate to the URL in your preferred browser.
+4. Send the ‘Authorise’ request. This constructs the OAuth URL that you can fetch from the Postman console. 
+> **_NOTE:_** This is an easy way to construct the URL and change the variables (e.g. state, scope), 
+you can also construct this URL manually without the need to send any API requests.
+5. Log in to the “submerchant” Mollie account (the account will be controlled) and navigate to the URL in your preferred browser.
 6. Connect the accounts, and retrieve the `code` parameter from the landing page URL. If you were not logged in to Mollie, you can do so here.
 7. Paste the copied code in the `code` parameter in the payload of the ‘Generate access tokens’ request in the same collection folder, and send it. This should take no longer than 30 seconds. If the code expires, go back to step 4.
-8. Postman tests read Mollie’s response and assign the tokens to global variables for further use. You can now send requests to all other endpoints in the collection and control the “submerchant” account.
+8. A Postman script reads the response body and assigns the tokens to environment variables for further use. You can now send requests to all other endpoints in the collection to create requests on behalf of the "submerchant" account.
 
 After one hour, you need to refresh the `access_token` using the ‘Refresh tokens’ endpoint. Send a request to the endpoint and the variables holding the tokens will be overwritten with the new values.
 
