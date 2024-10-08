@@ -1,3 +1,7 @@
+# Deprecated
+
+This collection has been deprecated and replaced by [a native collection on Postman Cloud](https://www.postman.com/molliedev/mollie-api/)
+
 # Overview
 
 This repository contains a set of Postman v2.1 collections that you can use to try out the functionality of the Mollie API. You can import the JSON files into any local Postman instance. The following collections are available:
